@@ -40,14 +40,14 @@ This project contains automated tests for the Unlayer web-based email editor usi
 
    To open the Cypress Test Runner, use the following command:
     
-    ```bash
+  
     npx cypress open
     
 ## Running Tests
 
    To run tests, use:
      
-    ```bash
+ 
     npx cypress run
 
 
