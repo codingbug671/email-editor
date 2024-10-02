@@ -8,6 +8,11 @@ export default class EmailEditorPage {
         return 'div[id="u_content_heading_2"] span';
     }
 
+    getExportHtmlBtn()
+    {
+        return 'div[id="root"] button'
+    }
+
 
     getIframe() {
         return 'iframe[src*="editor.unlayer.com"]';
@@ -37,6 +42,11 @@ export default class EmailEditorPage {
         cy.getIframe(this.getIframe())
           .find(this.getHeadingText())
           .click({ force: true });
+    }
+
+    clickExportHtmlBtn()
+    {
+        cy.get(this.getExportHtmlBtn()).eq(2).click()
     }
 
     
@@ -109,5 +119,50 @@ export default class EmailEditorPage {
                   });
             }
         });
+    }
+
+
+    validateFontFamilyHtmlInCode(logs: string, message: string, element: string, font: string)
+    {
+    
+        const logEntry = logs.find(log => log.message.includes(message));
+        
+
+    
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(logEntry.message, 'text/html');
+      
+      
+        const h1Element = doc.querySelector(element);
+        cy.log(h1Element)
+      
+
+        expect(h1Element).to.not.be.null; 
+        const fontFamily = h1Element.style.fontFamily || getComputedStyle(h1Element).fontFamily; 
+        expect(fontFamily).to.include(font);
+      
+      
+      
+    
+    }
+
+    validateFontWeightHtmlInCode(logs: string, message: string, element: string, font: string)
+    {
+    
+        const logEntry = logs.find(log => log.message.includes(message));
+        
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(logEntry.message, 'text/html');
+      
+        const h2Element = doc.querySelector(element);
+        cy.log(h2Element)
+      
+    
+        expect(h2Element).to.not.be.null; 
+        expect(h2Element.style.fontWeight).to.equal(font); 
+      
+      
+      
+    
     }
 }
