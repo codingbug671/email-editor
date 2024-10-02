@@ -9,7 +9,7 @@ This project contains automated tests for the Unlayer web-based email editor usi
 - [Installation](#installation)
 - [Usage](#usage)
 - [Running Tests](#running-tests)
-- [Folder Structure](#folder-structure)
+
 
 ## Features
 
@@ -36,29 +36,19 @@ This project contains automated tests for the Unlayer web-based email editor usi
     ```bash
     npm install
 
-3. **Usage:**
+## Usage
 
     To open the Cypress Test Runner, use the following command:
     ```bash
     npx cypress open
-
-4. **Running Tests:**
+    
+## Running Tests
 
      To run tests, use:
     ```bash
    npx cypress run
 
-## Folder Structure:
 
-email-editor/
-├── cypress/
-│   ├── fixtures/              # Sample test data
-│   ├── downloads/             # any downloads
-│   ├── e2e/                   # cypress tests
-│   └── support/               # Custom commands and configurations
-├── package.json               # Project metadata and dependencies
-├── cypress.config.json        # Cypress configuration
-└── README.md                  # Project documentation
 
 
 
