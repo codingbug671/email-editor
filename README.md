@@ -45,7 +45,7 @@ This project contains automated tests for the Unlayer web-based email editor usi
     
 ## Running Tests
 
-   To run tests, use:
+   To run the tests in headless mode (without the GUI), use:
      
  
     npx cypress run
