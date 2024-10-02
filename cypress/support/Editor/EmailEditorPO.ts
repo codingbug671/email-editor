@@ -34,46 +34,46 @@ export default class EmailEditorPage {
     }
 
     selectHeadingTextPortion() {
-        cy.getIframe(this.getIframe()) // Using the custom 'cy.getIframe'
+        cy.getIframe(this.getIframe())
           .find(this.getHeadingText())
           .click({ force: true });
     }
 
     
     selectSubheadingTextPortion() {
-        cy.getIframe(this.getIframe()) // Using the custom 'cy.getIframe'
+        cy.getIframe(this.getIframe()) 
           .find(this.getSubheadingText())
           .click({ force: true });
     }
     getFontFamilyListLength() {
-        return cy.getIframe(this.getIframe()) // Using the custom 'cy.getIframe'
+        return cy.getIframe(this.getIframe())
           .find(this.getFontFamilyList())
-          .then(elements => elements.length); // Simply returning the length
+          .then(elements => elements.length);
     }
 
     getFontWeightListLength() {
-        return cy.getIframe(this.getIframe()) // Using the custom 'cy.getIframe'
+        return cy.getIframe(this.getIframe()) 
           .find(this.getFontWeightList())
-          .then(elements => elements.length); // Simply returning the length
+          .then(elements => elements.length); 
     }
 
     clickFontFamilyBtn() {
-        cy.getIframe(this.getIframe()) // Using the custom 'cy.getIframe'
+        cy.getIframe(this.getIframe()) 
           .find(this.getFontFamilyBtn())
           .click({ force: true });
     }
 
     clickFontWeightBtn() {
-        cy.getIframe(this.getIframe()) // Using the custom 'cy.getIframe'
+        cy.getIframe(this.getIframe()) 
           .find(this.getFontWeightBtn())
           .click({ force: true });
     }
 
     updateFontFamily(fontfamily: string) {
-        this.clickFontFamilyBtn(); // Open the font family list
+        this.clickFontFamilyBtn(); 
         this.getFontFamilyListLength().then((length) => {
             for (let i = 0; i < length; i++) {
-                cy.getIframe(this.getIframe()) // Using 'cy.getIframe' for each interaction
+                cy.getIframe(this.getIframe()) 
                   .find(this.getFontFamilyList()).eq(i)
                   .invoke('text')
                   .then((titleText) => {
@@ -91,10 +91,10 @@ export default class EmailEditorPage {
     }
 
     updateFontWeight(fontweight: string) {
-        this.clickFontWeightBtn(); // Open the font family list
+        this.clickFontWeightBtn(); 
         this.getFontWeightListLength().then((length) => {
             for (let i = 0; i < length; i++) {
-                cy.getIframe(this.getIframe()) // Using 'cy.getIframe' for each interaction
+                cy.getIframe(this.getIframe()) 
                   .find(this.getFontWeightList()).eq(i)
                   .invoke('text')
                   .then((titleText) => {
