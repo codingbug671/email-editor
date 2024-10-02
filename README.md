@@ -15,12 +15,11 @@ This project contains automated tests for the Unlayer web-based email editor usi
 
 - Automated testing of email content customization.
 - Validation of font properties (family and weight) in the generated HTML.
-- Cross-browser testing on various viewport sizes.
 
 ## Technologies Used
 
-- [Cypress](https://www.cypress.io/) - A JavaScript end-to-end testing framework.
-- JavaScript (ES6)
+- [Cypress](https://www.cypress.io/) - A JavaScript/Typescript end-to-end testing framework.
+- Typescript
 - HTML/CSS for testing web content.
 
 ## Installation
@@ -34,4 +33,35 @@ This project contains automated tests for the Unlayer web-based email editor usi
 2. **Install dependencies:**
 
     Make sure you have Node.js installed, then run:
+    ```bash
     npm install
+
+3. **Usage:**
+
+    To open the Cypress Test Runner, use the following command:
+    ```bash
+    npx cypress open
+
+4. **Running Tests:**
+
+     To run tests, use:
+    ```bash
+   npx cypress run
+
+## Folder Structure:
+
+email-editor/
+├── cypress/
+│   ├── fixtures/              # Sample test data
+│   ├── downloads/             # any downloads
+│   ├── e2e/                   # cypress tests
+│   └── support/               # Custom commands and configurations
+├── package.json               # Project metadata and dependencies
+├── cypress.config.json        # Cypress configuration
+└── README.md                  # Project documentation
+
+
+
+
+
+   
