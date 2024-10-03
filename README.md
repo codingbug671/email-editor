@@ -9,6 +9,7 @@ This project contains automated tests for the Unlayer web-based email editor usi
 - [Installation](#installation)
 - [Usage](#usage)
 - [Running Tests](#running-tests)
+- [Test approach](#test-approach)
 
 
 ## Features
@@ -50,6 +51,19 @@ This project contains automated tests for the Unlayer web-based email editor usi
  
     npx cypress run
 
+## Test Approach
+
+1.Page Object Model (POM) Implementation:
+Utilized the Page Object Model (POM) pattern to create a structured and reusable class for the email editor. This approach modularizes the test code and enhances maintainability by separating the page elements and interactions.
+
+2.Handling iFrames with Cypress Commands:
+Leveraged custom Cypress commands to interact with the email editor's iFrame, enabling seamless access and manipulation of the editor’s content.
+
+3.Locators and Functions:
+Identified appropriate element locators and implemented reusable functions to perform actions like clicking buttons, updating font properties (family, weight), and other necessary interactions within the email editor.
+
+4.Console Logs and HTML Validation:
+Captured console log messages during the test execution to monitor system behaviors. Applied assertions to validate the HTML generated code, ensuring the changes in text properties were correctly reflected in the final output.
 
 
 
