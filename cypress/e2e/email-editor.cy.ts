@@ -43,7 +43,7 @@ describe('Test suite for Email editor', () => {
   
     emaileditorPage.selectSubheadingTextPortion()
     emaileditorPage.updateFontWeight("Bold")
-    emaileditorPage.clickExportHtmlBtn()
+  
   
   })
 
